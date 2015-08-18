@@ -1,0 +1,32 @@
+** 4 passes **
+* Energy (force, torque) pass
+Calculates any energy sources that produce power of change
+* Acceleraton pass
+Converts energy into acceleration of change
+* Speed pass
+Integrates acceleration of change into speed of change
+* Position pass
+Integrates speed of change into change
+
+** Component **
+* Has inputs (also Components)
+* Has outputs (also Components)
+* Has Resources
+* May accept resources to inputs
+* May pass resources to outputs
+* Has physical properties: mass, friction, etc.
+* Has physical states properties: temperature, etc.
+* May work in a cycle
+* Different properties, resource acceptance, etc.  may be affected based on cycle state
+* May convert Resources in certain cases (cycle state, Resource combination, outside trigger, time, etc)
+* Can have arbitary functionality (output test data, etc)
+
+** Resource **
+* Has physical properties: density (can be temperature dependent)
+* Compressability
+* Method of ignition (if any)
+* Melting, boiling point temperatures
+
+
+** Considerations **
+* Force/torque could be a Resource
