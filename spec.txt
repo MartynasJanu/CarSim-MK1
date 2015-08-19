@@ -12,7 +12,7 @@ Integrates speed of change into change
 * Has inputs (also Components)
 * Has outputs (also Components)
 * Has Resources
-* May accept resources to inputs
+* May accept resources from inputs
 * May pass resources to outputs
 * Has physical properties: mass, friction, etc.
 * Has physical states properties: temperature, etc.

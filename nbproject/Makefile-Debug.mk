@@ -35,6 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/Base/BaseCyclable.o \
+	${OBJECTDIR}/src/Base/CyclableLoop.o \
+	${OBJECTDIR}/src/Component.o \
+	${OBJECTDIR}/src/Resource.o \
 	${OBJECTDIR}/src/main.o
 
 
@@ -61,6 +65,26 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/carsim-mk1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/carsim-mk1 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/src/Base/BaseCyclable.o: src/Base/BaseCyclable.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Base
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Base/BaseCyclable.o src/Base/BaseCyclable.cpp
+
+${OBJECTDIR}/src/Base/CyclableLoop.o: src/Base/CyclableLoop.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Base
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Base/CyclableLoop.o src/Base/CyclableLoop.cpp
+
+${OBJECTDIR}/src/Component.o: src/Component.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Component.o src/Component.cpp
+
+${OBJECTDIR}/src/Resource.o: src/Resource.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resource.o src/Resource.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

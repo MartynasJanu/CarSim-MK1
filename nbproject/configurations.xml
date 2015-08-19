@@ -4,6 +4,11 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>src/Abstract/AbstractComponent.h</itemPath>
+      <itemPath>src/Base/BaseCyclable.h</itemPath>
+      <itemPath>src/Component.h</itemPath>
+      <itemPath>src/Base/CyclableLoop.h</itemPath>
+      <itemPath>src/Resource.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +17,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/Base/BaseCyclable.cpp</itemPath>
+      <itemPath>src/Component.cpp</itemPath>
+      <itemPath>src/Base/CyclableLoop.cpp</itemPath>
+      <itemPath>src/Resource.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -36,6 +45,24 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="src/Abstract/AbstractComponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Base/BaseCyclable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Base/BaseCyclable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Base/CyclableLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Base/CyclableLoop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Component.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Component.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Resource.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Resource.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +86,24 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="src/Abstract/AbstractComponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Base/BaseCyclable.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Base/BaseCyclable.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Base/CyclableLoop.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Base/CyclableLoop.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Component.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Component.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Resource.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Resource.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
