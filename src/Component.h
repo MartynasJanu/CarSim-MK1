@@ -17,15 +17,6 @@ public:
     Component();
     virtual ~Component();
     
-    /**
-     * Tells the Component to aquire a certain amount of resource
-     * 
-     * @param resource
-     * @param amount measured in internal units of measurement for particular resource
-     * @return (float) amount actually taken
-     */
-    float giveResource(const Resource *resource, float amount);
-    
     void update(float dt);
 public:
     list<Component*> outputs;

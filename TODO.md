@@ -20,6 +20,10 @@
 
 
 ------------
+* Timer
+Input: time
+Triggered by: time
+
 * Battery
 Stores: electricity
 Inputs: electricity

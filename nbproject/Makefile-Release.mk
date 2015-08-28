@@ -35,10 +35,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/Base/BaseCyclable.o \
-	${OBJECTDIR}/src/Base/CyclableLoop.o \
 	${OBJECTDIR}/src/Component.o \
+	${OBJECTDIR}/src/Components/BatteryComponent.o \
+	${OBJECTDIR}/src/Components/SparkPlugComponent.o \
+	${OBJECTDIR}/src/Components/TimerComponent.o \
 	${OBJECTDIR}/src/Resource.o \
+	${OBJECTDIR}/src/Resources/ElectricityResource.o \
+	${OBJECTDIR}/src/Stateful.o \
+	${OBJECTDIR}/src/Storables/ElectricityStorable.o \
 	${OBJECTDIR}/src/main.o
 
 
@@ -66,25 +70,45 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/carsim-mk1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/carsim-mk1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/Base/BaseCyclable.o: src/Base/BaseCyclable.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/Base
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Base/BaseCyclable.o src/Base/BaseCyclable.cpp
-
-${OBJECTDIR}/src/Base/CyclableLoop.o: src/Base/CyclableLoop.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src/Base
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Base/CyclableLoop.o src/Base/CyclableLoop.cpp
-
 ${OBJECTDIR}/src/Component.o: src/Component.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Component.o src/Component.cpp
 
+${OBJECTDIR}/src/Components/BatteryComponent.o: src/Components/BatteryComponent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Components
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/BatteryComponent.o src/Components/BatteryComponent.cpp
+
+${OBJECTDIR}/src/Components/SparkPlugComponent.o: src/Components/SparkPlugComponent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Components
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/SparkPlugComponent.o src/Components/SparkPlugComponent.cpp
+
+${OBJECTDIR}/src/Components/TimerComponent.o: src/Components/TimerComponent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Components
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/TimerComponent.o src/Components/TimerComponent.cpp
+
 ${OBJECTDIR}/src/Resource.o: src/Resource.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resource.o src/Resource.cpp
+
+${OBJECTDIR}/src/Resources/ElectricityResource.o: src/Resources/ElectricityResource.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Resources
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resources/ElectricityResource.o src/Resources/ElectricityResource.cpp
+
+${OBJECTDIR}/src/Stateful.o: src/Stateful.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Stateful.o src/Stateful.cpp
+
+${OBJECTDIR}/src/Storables/ElectricityStorable.o: src/Storables/ElectricityStorable.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Storables
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storables/ElectricityStorable.o src/Storables/ElectricityStorable.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
