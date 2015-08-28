@@ -33,7 +33,8 @@ public:
     float takeElectricity(float volts, float ampers, float seconds);
     float giveElectricity(float volts, float ampers, float seconds);
     
-    float drainElectricity();
+    void drainElectricity();
+    void drainElectricity(float amount);
 private:
     ElectricityResource electric_capacity;
 };

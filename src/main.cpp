@@ -10,6 +10,7 @@
 #include "Components/BatteryComponent.h"
 #include "Components/TimerComponent.h"
 #include "Stateful.h"
+#include "Components/ElectricswitchComponent.h"
 #include <unistd.h>
 
 const float TIMESTEP = 1.0/60.0;
@@ -39,13 +40,14 @@ int main(int argc, char** argv) {
     // create components
     SparkplugComponent sp;
     BatteryComponent bat;
+    ElectricswitchComponent elswitch;
     TimerComponent timer;
     
     // connect components
-    sp.inputs.push_back(&bat);
-    bat.outputs.push_back(&sp);
-    
-    timer.setStateRatio(0.5f);
+    elswitch.input = &bat;
+    elswitch.output = &sp;
+    elswitch.setSwitchedOn(false);
+    timer.outputs.push_back(&elswitch);
     
     timespec time1, time2;
     float dt = 0.0f;

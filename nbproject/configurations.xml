@@ -16,6 +16,7 @@
         <itemPath>src/Storables/ElectricityStorable.h</itemPath>
       </logicalFolder>
       <itemPath>src/Component.h</itemPath>
+      <itemPath>src/Components/ElectricswitchComponent.h</itemPath>
       <itemPath>src/Resource.h</itemPath>
       <itemPath>src/Stateful.h</itemPath>
     </logicalFolder>
@@ -38,6 +39,7 @@
         <itemPath>src/Storables/ElectricityStorable.cpp</itemPath>
       </logicalFolder>
       <itemPath>src/Component.cpp</itemPath>
+      <itemPath>src/Components/ElectricswitchComponent.cpp</itemPath>
       <itemPath>src/Resource.cpp</itemPath>
       <itemPath>src/Stateful.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
@@ -87,6 +89,16 @@
             flavor2="0">
       </item>
       <item path="src/Components/BatteryComponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Components/ElectricswitchComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/ElectricswitchComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/Components/SparkPlugComponent.cpp"
             ex="false"
@@ -163,6 +175,16 @@
             flavor2="0">
       </item>
       <item path="src/Components/BatteryComponent.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Components/ElectricswitchComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/ElectricswitchComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="src/Components/SparkPlugComponent.cpp"
             ex="false"

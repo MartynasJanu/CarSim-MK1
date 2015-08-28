@@ -20,6 +20,8 @@ public:
     {}
     
     BatteryComponent(const BatteryComponent& orig);
+    
+    void update(float dt);
     virtual ~BatteryComponent();
 private:
 
