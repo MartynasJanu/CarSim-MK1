@@ -27,15 +27,6 @@ Component::~Component() {
     this->resources.clear();
 }
 
-void Component::Update(float dt) {
-    float add = 1.0f * dt;
-    advanceCycle(add);
-}
+void Component::update(float dt) {
 
-void Component::advanceCycle(float advance) {
-    float d = addCyclePosition(advance);
-
-    for(list<Component*>::iterator i = outputs.begin(); i != outputs.end(); ++i) {
-        (*i)->advanceCycle(-d);
-    }
 }

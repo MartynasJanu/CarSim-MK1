@@ -9,11 +9,10 @@
 #define	COMPONENT_H
 
 #include "Resource.h"
-#include "Base/CyclableLoop.h"
 #include <list>
 using namespace std;
 
-class Component : public CyclableLoop {
+class Component {
 public:
     Component();
     virtual ~Component();
@@ -27,13 +26,7 @@ public:
      */
     float giveResource(const Resource *resource, float amount);
     
-    void Update(float dt);
-    void UpdateEnergy();
-    void UpdateAcceleration();
-    void UpdateSpeed();
-    void UpdatePosition();
-    
-    void advanceCycle(float advance);
+    void update(float dt);
 public:
     list<Component*> outputs;
     list<Component*> inputs;
