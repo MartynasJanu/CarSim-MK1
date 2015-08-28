@@ -17,6 +17,10 @@
 class ElectricityStorable {
 public:
     ElectricityStorable();
+    ElectricityStorable(float amount, float capacity) {
+        electric_capacity.setMaxAmount(capacity, true);
+        electric_capacity.setAmount(amount, true);
+    }
     ElectricityStorable(float capacity) {
         electric_capacity.setMaxAmount(capacity, true);
         electric_capacity.setAmount(capacity, true);
@@ -24,9 +28,14 @@ public:
     ElectricityStorable(const ElectricityStorable& orig);
     virtual ~ElectricityStorable();
     
-    ElectricityResource electric_capacity;
+    float getElectricCapacity();
+    float getElectricCapacityFraction();
+    float takeElectricity(float volts, float ampers, float seconds);
+    float giveElectricity(float volts, float ampers, float seconds);
+    
+    float drainElectricity();
 private:
-
+    ElectricityResource electric_capacity;
 };
 
 #endif	/* ELECTRICITYSTORABLE_H */

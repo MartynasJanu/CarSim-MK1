@@ -20,7 +20,7 @@ float Resource::getMaxAmount() {
 
 float Resource::addAmount(float amount) {
     // amount that can be added without overflowing
-    float capacity = this->units_max - this->units_max;
+    float capacity = this->units_max - this->units;
     
     // if all amount can be added, 
     // add and return zero remainder

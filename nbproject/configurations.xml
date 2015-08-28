@@ -64,6 +64,10 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <commandlineTool>g++</commandlineTool>
+        </ccTool>
         <linkerTool>
           <linkerLibItems>
             <linkerOptionItem>-lboost_system</linkerOptionItem>

@@ -9,6 +9,7 @@
 #include "Components/SparkplugComponent.h"
 #include "Components/BatteryComponent.h"
 #include "Components/TimerComponent.h"
+#include "Stateful.h"
 #include <unistd.h>
 
 const float TIMESTEP = 1.0/60.0;
@@ -35,14 +36,20 @@ float diff(timespec start, timespec end)
  * 
  */
 int main(int argc, char** argv) {
-    //SparkplugComponent *sp = new SparkplugComponent();
-    //BatteryComponent *bat = new BatteryComponent();
+    // create components
+    SparkplugComponent sp;
+    BatteryComponent bat;
     TimerComponent timer;
     
-    timespec time1, time2;
-    int temp;
+    // connect components
+    sp.inputs.push_back(&bat);
+    bat.outputs.push_back(&sp);
     
+    timer.setStateRatio(0.5f);
+    
+    timespec time1, time2;
     float dt = 0.0f;
+    
     while (true) {
         clock_gettime(CLOCK_REALTIME, &time1);
 
@@ -57,7 +64,11 @@ int main(int argc, char** argv) {
         if (dt > TIMESTEP) {
             /// *** STEP
             timer.update(dt);
+            sp.update(dt);
+            bat.update(dt);
             
+            cout << "bat: " <<  bat.getElectricCapacity() << " | ";
+            cout << "sp: " <<  sp.getElectricCapacity() << "\n";
             dt = 0;
         }
     }

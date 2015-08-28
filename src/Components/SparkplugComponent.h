@@ -10,14 +10,19 @@
 
 #include "../Component.h"
 #include "../Storables/ElectricityStorable.h"
+#include <iostream>
 
 class SparkplugComponent : public Component, public ElectricityStorable {
 public:
-    SparkplugComponent();
+    SparkplugComponent(float capacity = 3.0f/12.0f):
+        ElectricityStorable(0.0f, capacity)
+    {}
     SparkplugComponent(const SparkplugComponent& orig);
     virtual ~SparkplugComponent();
+    
+    void update(float dt);
 private:
-
+    void triggerSpark();
 };
 
 #endif	/* SPARKPLUG_H */

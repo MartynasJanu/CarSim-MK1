@@ -73,47 +73,47 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/carsim-mk1: ${OBJECTFILES}
 ${OBJECTDIR}/src/Component.o: src/Component.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Component.o src/Component.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Component.o src/Component.cpp
 
 ${OBJECTDIR}/src/Components/BatteryComponent.o: src/Components/BatteryComponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Components
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/BatteryComponent.o src/Components/BatteryComponent.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/BatteryComponent.o src/Components/BatteryComponent.cpp
 
 ${OBJECTDIR}/src/Components/SparkPlugComponent.o: src/Components/SparkPlugComponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Components
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/SparkPlugComponent.o src/Components/SparkPlugComponent.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/SparkPlugComponent.o src/Components/SparkPlugComponent.cpp
 
 ${OBJECTDIR}/src/Components/TimerComponent.o: src/Components/TimerComponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Components
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/TimerComponent.o src/Components/TimerComponent.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/TimerComponent.o src/Components/TimerComponent.cpp
 
 ${OBJECTDIR}/src/Resource.o: src/Resource.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resource.o src/Resource.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resource.o src/Resource.cpp
 
 ${OBJECTDIR}/src/Resources/ElectricityResource.o: src/Resources/ElectricityResource.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Resources
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resources/ElectricityResource.o src/Resources/ElectricityResource.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Resources/ElectricityResource.o src/Resources/ElectricityResource.cpp
 
 ${OBJECTDIR}/src/Stateful.o: src/Stateful.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Stateful.o src/Stateful.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Stateful.o src/Stateful.cpp
 
 ${OBJECTDIR}/src/Storables/ElectricityStorable.o: src/Storables/ElectricityStorable.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Storables
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storables/ElectricityStorable.o src/Storables/ElectricityStorable.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Storables/ElectricityStorable.o src/Storables/ElectricityStorable.cpp
 
 ${OBJECTDIR}/src/main.o: src/main.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main.o src/main.cpp
 
 # Subprojects
 .build-subprojects:

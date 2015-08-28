@@ -15,3 +15,25 @@ ElectricityStorable::ElectricityStorable(const ElectricityStorable& orig) {
 ElectricityStorable::~ElectricityStorable() {
 }
 
+float ElectricityStorable::getElectricCapacity() {
+    return this->electric_capacity.getCurrentAmount();
+}
+
+float ElectricityStorable::getElectricCapacityFraction() {
+    return this->electric_capacity.getMaxAmount() / this->electric_capacity.getCurrentAmount();
+}
+
+float ElectricityStorable::takeElectricity(float volts, float ampers, float seconds) {
+    float capacity_cost = (ampers * seconds) / volts;
+    return this->electric_capacity.takeAmount(capacity_cost);
+}
+
+float ElectricityStorable::giveElectricity(float volts, float ampers, float seconds) {
+    float capacity_to_add = (ampers * seconds) / volts;
+    return this->electric_capacity.addAmount(capacity_to_add) / capacity_to_add;
+}
+
+float ElectricityStorable::drainElectricity() {
+    this->electric_capacity.setAmount(0, true);
+}
+

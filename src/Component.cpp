@@ -6,6 +6,10 @@
  */
 
 #include "Component.h"
+#include "Storables/ElectricityStorable.h"
+
+#include <iostream>
+#include <type_traits>
 
 Component::Component() {
 }
@@ -20,13 +24,8 @@ Component::~Component() {
         (*i)->~Component();
     }
     this->inputs.clear();
-    
-    for(list<Resource*>::iterator i = resources.begin(); i != resources.end(); ++i) {
-        (*i)->~Resource();
-    }
-    this->resources.clear();
 }
 
 void Component::update(float dt) {
-    
+
 }

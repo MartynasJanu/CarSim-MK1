@@ -8,7 +8,6 @@
 #ifndef COMPONENT_H
 #define	COMPONENT_H
 
-#include "Resource.h"
 #include <list>
 using namespace std;
 
@@ -21,7 +20,6 @@ public:
 public:
     list<Component*> outputs;
     list<Component*> inputs;
-    list<Resource*> resources;
 };
 
 #endif	/* COMPONENT_H */
