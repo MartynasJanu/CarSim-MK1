@@ -12,13 +12,14 @@
 #include "../Storables/ElectricityStorable.h"
 #include <iostream>
 
-const float voltage = 12.0;
-const float amperage = 3.0;
-const float time_seconds = 0.5;
+const float voltage = 12.0f;
+const float amperage = 3.0f;
+const float time_seconds = 0.003f;
+const float Ws = voltage * amperage * time_seconds;
     
 class SparkplugComponent : public Component, public ElectricityStorable {
 public:
-    SparkplugComponent(float capacity = (amperage*time_seconds)/voltage):
+    SparkplugComponent(float capacity = Ws):
         ElectricityStorable(0.0f, capacity)
     {}
     SparkplugComponent(const SparkplugComponent& orig);

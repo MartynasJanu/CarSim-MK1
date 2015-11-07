@@ -16,30 +16,46 @@ ElectricityStorable::~ElectricityStorable() {
 }
 
 float ElectricityStorable::getElectricCapacity() {
-    return this->electric_capacity.getCurrentAmount();
+    return this->electric_power.getCurrentAmount();
+}
+
+float ElectricityStorable::getElectricCapacityUntilFull() {
+    return this->electric_power.getMaxAmount() - this->electric_power.getCurrentAmount();
 }
 
 float ElectricityStorable::getElectricCapacityFraction() {
-    return this->electric_capacity.getCurrentAmount() / this->electric_capacity.getMaxAmount();
+    return this->electric_power.getCurrentAmount() / this->electric_power.getMaxAmount();
 }
 
-float ElectricityStorable::takeElectricity(float volts, float ampers, float seconds) {
-    float capacity_cost = (ampers * seconds) / volts;
-    return this->electric_capacity.takeAmount(capacity_cost);
-}
-
-/*
- @return fraction that was not added
+/**
+ * 
+ * @return Maximum voltage in volts
  */
-float ElectricityStorable::giveElectricity(float volts, float ampers, float seconds) {
-    float capacity_to_add = (ampers * seconds) / volts;
-    return this->electric_capacity.addAmount(capacity_to_add) / capacity_to_add;
+float ElectricityStorable::getMaxVoltage() {
+    return 12.0f;
 }
 
-void ElectricityStorable::drainElectricity() {
-    this->electric_capacity.setAmount(0, true);
-}
-void ElectricityStorable::drainElectricity(float amount) {
-    this->electric_capacity.takeAmount(amount);
+/**
+ * 
+ * @return Maximum amperage in ampers
+ */
+float ElectricityStorable::getMaxAmperage() {
+    return 3.0f;
 }
 
+/**
+ * Transfers electricity to a destination ElectricityStorable
+ * 
+ * @param ElectricityStorable dest - destination electricity storage object
+ * @param time - seconds
+ */
+void ElectricityStorable::transferElectricity(
+        ElectricityStorable& dest,
+        float time
+    ) {
+    const float can_accept = dest.getElectricCapacityUntilFull();
+    const float cost = can_accept / (this->getMaxVoltage() * this->getMaxAmperage() * time);
+    const float can_give = this->electric_power.takeAmount(cost);
+    
+    dest.getElectricPower()->addAmount(can_give);
+}

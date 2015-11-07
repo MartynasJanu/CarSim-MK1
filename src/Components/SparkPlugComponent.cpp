@@ -30,8 +30,8 @@ void SparkplugComponent::triggerSpark() {
         return;
     }
     
-    this->drainElectricity();
-    std::cout << "SPARK!\n";
+    //this->getElectricPower()->setAmount(0, true);
+   // std::cout << "SPARK!\n";
     
     //for(list<Component*>::iterator i = outputs.begin(); i != outputs.end(); ++i) {
     //    ElectricityStorable* electricity_source = (dynamic_cast<ElectricityStorable*>(*i));

@@ -6,8 +6,9 @@
  */
 
 // http://hypertextbook.com/facts/1999/DeniseLai.shtml
-
 // [F] = ([A] * [s]) / [V]
+
+// resource: watt-hours Wh
 
 #ifndef ELECTRICITYSTORABLE_H
 #define	ELECTRICITYSTORABLE_H
@@ -18,25 +19,30 @@ class ElectricityStorable {
 public:
     ElectricityStorable();
     ElectricityStorable(float amount, float capacity) {
-        electric_capacity.setMaxAmount(capacity, true);
-        electric_capacity.setAmount(amount, true);
+        electric_power.setMaxAmount(capacity, true);
+        electric_power.setAmount(amount, true);
     }
     ElectricityStorable(float capacity) {
-        electric_capacity.setMaxAmount(capacity, true);
-        electric_capacity.setAmount(capacity, true);
+        electric_power.setMaxAmount(capacity, true);
+        electric_power.setAmount(capacity, true);
     }
     ElectricityStorable(const ElectricityStorable& orig);
     virtual ~ElectricityStorable();
     
     float getElectricCapacity();
     float getElectricCapacityFraction();
-    float takeElectricity(float volts, float ampers, float seconds);
-    float giveElectricity(float volts, float ampers, float seconds);
+    float getElectricCapacityUntilFull();
     
-    void drainElectricity();
-    void drainElectricity(float amount);
+    float getMaxVoltage();
+    float getMaxAmperage();
+    
+    void transferElectricity(ElectricityStorable& dest, float time);
+    
+    ElectricityResource* getElectricPower() {
+        return &this->electric_power;
+    }
 private:
-    ElectricityResource electric_capacity;
+    ElectricityResource electric_power;
 };
 
 #endif	/* ELECTRICITYSTORABLE_H */
