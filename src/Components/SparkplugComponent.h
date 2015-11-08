@@ -19,15 +19,21 @@ const float Ws = voltage * amperage * time_seconds;
     
 class SparkplugComponent : public Component, public ElectricityStorable {
 public:
-    SparkplugComponent(float capacity = Ws):
+    SparkplugComponent(int number, float capacity = Ws):
         ElectricityStorable(0.0f, capacity)
-    {}
+    {
+        this->number = number;
+        this->sparking = false;
+    }
     SparkplugComponent(const SparkplugComponent& orig);
     virtual ~SparkplugComponent();
     
     void update(float dt);
-private:
     void triggerSpark();
+    
+    bool sparking;
+private:
+    int number;
 };
 
 #endif	/* SPARKPLUG_H */

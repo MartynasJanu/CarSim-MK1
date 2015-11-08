@@ -5,8 +5,6 @@
  * Created on August 29, 2015, 1:50 AM
  */
 
-#include <list>
-
 #include "ElectricswitchComponent.h"
 
 ElectricswitchComponent::ElectricswitchComponent(const ElectricswitchComponent& orig) {

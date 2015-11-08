@@ -7,6 +7,8 @@
 
 #include "ElectricityStorable.h"
 
+#include <iostream>
+
 ElectricityStorable::ElectricityStorable() {
 }
 ElectricityStorable::ElectricityStorable(const ElectricityStorable& orig) {
@@ -32,7 +34,9 @@ float ElectricityStorable::getElectricCapacityFraction() {
  * @return Maximum voltage in volts
  */
 float ElectricityStorable::getMaxVoltage() {
-    return 12.0f;
+    const float fr = this->getElectricCapacityFraction();
+    
+    return 12.0f * (fr);
 }
 
 /**
@@ -54,8 +58,13 @@ void ElectricityStorable::transferElectricity(
         float time
     ) {
     const float can_accept = dest.getElectricCapacityUntilFull();
-    const float cost = can_accept / (this->getMaxVoltage() * this->getMaxAmperage() * time);
-    const float can_give = this->electric_power.takeAmount(cost);
+    if (can_accept <= 0) {
+        return;
+    }
     
+    const float cost = can_accept / (this->getMaxVoltage() * this->getMaxAmperage() * time);
+    const float can_give = can_accept * (this->electric_power.takeAmount(cost) / cost);
+    
+    this->getElectricPower()->takeAmount(cost);
     dest.getElectricPower()->addAmount(can_give);
 }

@@ -20,9 +20,7 @@ SparkplugComponent::~SparkplugComponent() {
 }
 
 void SparkplugComponent::update(float dt) {
-    if (this->getElectricCapacityFraction() >= 0.99f) {
-        triggerSpark();
-    }
+    this->sparking = false;
 }
 
 void SparkplugComponent::triggerSpark() {
@@ -30,8 +28,9 @@ void SparkplugComponent::triggerSpark() {
         return;
     }
     
-    //this->getElectricPower()->setAmount(0, true);
-   // std::cout << "SPARK!\n";
+    this->getElectricPower()->setAmount(0, true);
+    this->sparking = true;
+    //std::cout << "SPARK " << this->number << "\n";
     
     //for(list<Component*>::iterator i = outputs.begin(); i != outputs.end(); ++i) {
     //    ElectricityStorable* electricity_source = (dynamic_cast<ElectricityStorable*>(*i));

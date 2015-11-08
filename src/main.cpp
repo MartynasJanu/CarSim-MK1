@@ -11,9 +11,11 @@
 #include "Components/TimerComponent.h"
 #include "Stateful.h"
 #include "Components/ElectricswitchComponent.h"
+#include "Components/DistributorComponent.h"
+#include <list>
 #include <unistd.h>
 
-const float TIMESTEP = 1.0/60.0;
+const float TIMESTEP = 1.0/10.0;
 
 using namespace std;
 
@@ -32,26 +34,42 @@ float diff(timespec start, timespec end)
 	return (float)temp.tv_sec + ((float)temp.tv_nsec / 1000000000.0f);
 }
 
-
 /*
  * 
  */
 int main(int argc, char** argv) {
     // create components
-    SparkplugComponent sp;
-    BatteryComponent bat;
-    ElectricswitchComponent elswitch;
-    TimerComponent timer;
+    BatteryComponent battery;
+    DistributorComponent distributor;
+    // firing sequence 1-3-4-2
+    SparkplugComponent sparkplug1(1);
+    SparkplugComponent sparkplug3(3);
+    SparkplugComponent sparkplug4(4);
+    SparkplugComponent sparkplug2(2);
     
     // connect components
-    elswitch.input = &bat;
-    elswitch.output = &sp;
-    elswitch.setSwitchedOn(false);
-    timer.outputs.push_back(&elswitch);
+    distributor.input = &battery;
+    
+    // init components
+    distributor.addOutput(&sparkplug1);
+    distributor.addOutput(&sparkplug3);
+    distributor.addOutput(&sparkplug4);
+    distributor.addOutput(&sparkplug2);
+    
+    // add components to update list
+    list<Component*> components;
+    components.push_back(&battery);
+    components.push_back(&sparkplug1);
+    components.push_back(&sparkplug3);
+    components.push_back(&sparkplug4);
+    components.push_back(&sparkplug2);
+    components.push_back(&distributor);
     
     timespec time1, time2;
     float dt = 0.0f;
     
+    float time = 0.0f;
+    float TOD = 0.0f;
     while (true) {
         clock_gettime(CLOCK_REALTIME, &time1);
 
@@ -63,14 +81,46 @@ int main(int argc, char** argv) {
         
         clock_gettime(CLOCK_REALTIME, &time2);
         dt += diff(time1,time2);
+        
+        
         if (dt > TIMESTEP) {
             /// *** STEP
-            timer.update(dt);
-            sp.update(dt);
-            bat.update(dt);
+            time += dt;
+            //cout << "elapsed: " << time << "\n";
             
-            cout << "bat: " <<  bat.getElectricCapacity() << " | ";
-            cout << "sp: " <<  sp.getElectricCapacity() << "\n";
+            cout << "bat: " <<  battery.getElectricCapacityFraction()*100.0f << "% ";
+            
+            if (sparkplug1.sparking) {
+                cout << "[*] " << " ";
+            } else {
+                cout << "[ ] " << " ";
+            }
+            
+            if (sparkplug2.sparking) {
+                cout << "[*] " << " ";
+            } else {
+                cout << "[ ] " << " ";
+            }
+            
+            if (sparkplug3.sparking) {
+                cout << "[*] " << " ";
+            } else {
+                cout << "[ ] " << " ";
+            }
+            
+            if (sparkplug4.sparking) {
+                cout << "[*] " << "\n" << flush;
+            } else {
+                cout << "[ ] " << "\n" << flush;
+            }
+            
+            for(list<Component*>::iterator i = components.begin(); i != components.end(); ++i) {
+                (*i)->update(dt);
+            }
+            
+            
+            
+            //cout << "\n";
             dt = 0;
         }
     }

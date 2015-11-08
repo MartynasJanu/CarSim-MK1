@@ -25,7 +25,3 @@ Component::~Component() {
     }
     this->inputs.clear();
 }
-
-void Component::update(float dt) {
-
-}

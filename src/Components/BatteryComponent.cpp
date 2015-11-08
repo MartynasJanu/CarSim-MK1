@@ -16,6 +16,7 @@ BatteryComponent::~BatteryComponent() {
 void BatteryComponent::update(float dt) {
     if (this->getElectricCapacity() == 0.0f) return;
     
+    // give away electricity to outputs
     for(list<Component*>::iterator i = outputs.begin(); i != outputs.end(); ++i) {
         ElectricityStorable* el_store = (dynamic_cast<ElectricityStorable*>(*i));
         if (el_store != 0) {

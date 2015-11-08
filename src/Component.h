@@ -16,7 +16,7 @@ public:
     Component();
     virtual ~Component();
     
-    void update(float dt);
+    virtual void update(float dt){}
 public:
     list<Component*> outputs;
     list<Component*> inputs;

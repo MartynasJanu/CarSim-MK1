@@ -15,7 +15,7 @@
 
 class BatteryComponent : public Component, public ElectricityStorable {
 public:
-    BatteryComponent(float capacity/* Ws */ = 44 /*Ah*/ * 12 /*V*/ * 3600):
+    BatteryComponent(float capacity/* Ws */ = 44 /*Ah*/ * 12 /*V*/ * 0.3600):
         ElectricityStorable(capacity)
     {}
     

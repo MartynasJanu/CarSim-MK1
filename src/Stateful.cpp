@@ -19,9 +19,8 @@ Stateful::~Stateful() {
 */
 float Stateful::addState(float amount) {
     if (!this->loop) {
-        float init_state = this->state;
+        const float init_state = this->state;
         this->state += amount * this->state_ratio;
-        //this->constraintState();
         return this->state - init_state;
     } else {
         this->state += amount * this->state_ratio;
