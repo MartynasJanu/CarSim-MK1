@@ -37,7 +37,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Component.o \
 	${OBJECTDIR}/src/Components/BatteryComponent.o \
+	${OBJECTDIR}/src/Components/DistributorComponent.o \
 	${OBJECTDIR}/src/Components/ElectricswitchComponent.o \
+	${OBJECTDIR}/src/Components/IgnitionChamberComponent.o \
 	${OBJECTDIR}/src/Components/SparkPlugComponent.o \
 	${OBJECTDIR}/src/Components/TimerComponent.o \
 	${OBJECTDIR}/src/Resource.o \
@@ -81,10 +83,20 @@ ${OBJECTDIR}/src/Components/BatteryComponent.o: src/Components/BatteryComponent.
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/BatteryComponent.o src/Components/BatteryComponent.cpp
 
+${OBJECTDIR}/src/Components/DistributorComponent.o: src/Components/DistributorComponent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Components
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/DistributorComponent.o src/Components/DistributorComponent.cpp
+
 ${OBJECTDIR}/src/Components/ElectricswitchComponent.o: src/Components/ElectricswitchComponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Components
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/ElectricswitchComponent.o src/Components/ElectricswitchComponent.cpp
+
+${OBJECTDIR}/src/Components/IgnitionChamberComponent.o: src/Components/IgnitionChamberComponent.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/Components
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Components/IgnitionChamberComponent.o src/Components/IgnitionChamberComponent.cpp
 
 ${OBJECTDIR}/src/Components/SparkPlugComponent.o: src/Components/SparkPlugComponent.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/Components

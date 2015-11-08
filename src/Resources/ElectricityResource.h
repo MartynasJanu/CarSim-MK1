@@ -1,6 +1,5 @@
 /* 
  * File:   ElectricityResource.h
- * Author: tsynique
  *
  * Created on August 28, 2015, 9:00 PM
  */
@@ -13,7 +12,7 @@
 class ElectricityResource : public Resource {
 public:
     ElectricityResource() {};
-    ElectricityResource(float capacity): Resource(capacity) {};
+    ElectricityResource(float capacity /* watt-seconds [Ws]*/): Resource(capacity) {};
     ElectricityResource(const ElectricityResource& orig);
     virtual ~ElectricityResource();
 private:

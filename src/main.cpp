@@ -34,6 +34,7 @@ float diff(timespec start, timespec end)
 	return (float)temp.tv_sec + ((float)temp.tv_nsec / 1000000000.0f);
 }
 
+
 /*
  * 
  */
@@ -86,9 +87,8 @@ int main(int argc, char** argv) {
         if (dt > TIMESTEP) {
             /// *** STEP
             time += dt;
-            //cout << "elapsed: " << time << "\n";
-            
-            cout << "bat: " <<  battery.getElectricCapacityFraction()*100.0f << "% ";
+
+            cout << "bat: " <<  battery.getElectricCapacityFraction()*100.0f << "%\n";
             
             if (sparkplug1.sparking) {
                 cout << "[*] " << " ";
@@ -117,8 +117,6 @@ int main(int argc, char** argv) {
             for(list<Component*>::iterator i = components.begin(); i != components.end(); ++i) {
                 (*i)->update(dt);
             }
-            
-            
             
             //cout << "\n";
             dt = 0;

@@ -14,7 +14,6 @@
 using namespace std;
 
 DistributorComponent::~DistributorComponent() {
-    delete input;
     outputs.clear();
 }
 
@@ -22,7 +21,7 @@ void DistributorComponent::addOutput(Component* component) {
     this->outputs.push_back(component);
     this->setStateRatio((float)this->outputs.size());
     
-    if (this->outputs.size() == 1) {
+    if (this->outputs.size() == 1 && this->input != 0) {
         this->active = this->outputs.begin();
         this->input->outputs.push_back((*this->active));
     }
@@ -33,6 +32,7 @@ void DistributorComponent::update(float dt) {
     
     if (looped == 1) {
         this->input->outputs.remove((*this->active));
+        // trigger spark plug
         SparkplugComponent *sparkplug = dynamic_cast<SparkplugComponent*>(*this->active);
         if (sparkplug != 0) {
             sparkplug->triggerSpark();

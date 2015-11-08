@@ -6,6 +6,9 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Components" projectFiles="true">
         <itemPath>src/Components/BatteryComponent.h</itemPath>
+        <itemPath>src/Components/DistributorComponent.h</itemPath>
+        <itemPath>src/Components/ElectricswitchComponent.h</itemPath>
+        <itemPath>src/Components/IgnitionChamberComponent.h</itemPath>
         <itemPath>src/Components/SparkplugComponent.h</itemPath>
         <itemPath>src/Components/TimerComponent.h</itemPath>
       </logicalFolder>
@@ -16,7 +19,6 @@
         <itemPath>src/Storables/ElectricityStorable.h</itemPath>
       </logicalFolder>
       <itemPath>src/Component.h</itemPath>
-      <itemPath>src/Components/ElectricswitchComponent.h</itemPath>
       <itemPath>src/Resource.h</itemPath>
       <itemPath>src/Stateful.h</itemPath>
     </logicalFolder>
@@ -29,6 +31,9 @@
                    projectFiles="true">
       <logicalFolder name="f1" displayName="Components" projectFiles="true">
         <itemPath>src/Components/BatteryComponent.cpp</itemPath>
+        <itemPath>src/Components/DistributorComponent.cpp</itemPath>
+        <itemPath>src/Components/ElectricswitchComponent.cpp</itemPath>
+        <itemPath>src/Components/IgnitionChamberComponent.cpp</itemPath>
         <itemPath>src/Components/SparkPlugComponent.cpp</itemPath>
         <itemPath>src/Components/TimerComponent.cpp</itemPath>
       </logicalFolder>
@@ -39,7 +44,6 @@
         <itemPath>src/Storables/ElectricityStorable.cpp</itemPath>
       </logicalFolder>
       <itemPath>src/Component.cpp</itemPath>
-      <itemPath>src/Components/ElectricswitchComponent.cpp</itemPath>
       <itemPath>src/Resource.cpp</itemPath>
       <itemPath>src/Stateful.cpp</itemPath>
       <itemPath>src/main.cpp</itemPath>
@@ -90,12 +94,32 @@
       </item>
       <item path="src/Components/BatteryComponent.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Components/DistributorComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/DistributorComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/Components/ElectricswitchComponent.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="src/Components/ElectricswitchComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Components/IgnitionChamberComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/IgnitionChamberComponent.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -176,12 +200,32 @@
       </item>
       <item path="src/Components/BatteryComponent.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/Components/DistributorComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/DistributorComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="src/Components/ElectricswitchComponent.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
       <item path="src/Components/ElectricswitchComponent.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/Components/IgnitionChamberComponent.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/Components/IgnitionChamberComponent.h"
             ex="false"
             tool="3"
             flavor2="0">
